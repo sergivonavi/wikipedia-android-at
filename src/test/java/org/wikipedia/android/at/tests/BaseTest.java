@@ -11,6 +11,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestInfo;
 import org.openqa.selenium.NoSuchSessionException;
 import org.wikipedia.android.at.config.RemoteConfig;
+import org.wikipedia.android.at.drivers.BrowserstackDriver;
+import org.wikipedia.android.at.drivers.LocalDriver;
 import org.wikipedia.android.at.utils.RemoteUtils;
 import org.wikipedia.android.at.utils.report.AllureAttachments;
 import org.wikipedia.android.at.utils.report.RemoteSession;
@@ -22,6 +24,10 @@ public class BaseTest {
 
     @BeforeAll
     static void beforeAll() {
+        Configuration.browser = remoteConfig.isRemote()
+                ? BrowserstackDriver.class.getName()
+                : LocalDriver.class.getName();
+
         Configuration.browserSize = null;
         Configuration.timeout = 30000;
     }
@@ -33,6 +39,7 @@ public class BaseTest {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         Selenide.open();
     }
+
 
     @AfterEach
     void afterEach() {
