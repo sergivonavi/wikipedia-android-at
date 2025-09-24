@@ -51,9 +51,8 @@ public class OnboardingScreen {
     }
 
     @Step("Проверяем, что кнопка 'Continue' не отображается")
-    public OnboardingScreen shouldNotHaveContinueButton() {
+    public void shouldNotHaveContinueButton() {
         continueButton.shouldNotBe(visible);
-        return this;
     }
 
     @Step("Проверяем, что кнопка 'Skip' отображается")

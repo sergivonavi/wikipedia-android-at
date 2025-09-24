@@ -9,6 +9,12 @@ import static org.wikipedia.android.at.utils.AppUtils.appId;
 
 public class ExploreScreen {
     private final SelenideElement toolbarLogo = $(appId("main_toolbar_wordmark"));
+    private final SelenideElement searchContainer = $(appId("search_container"));
+
+    @Step("Нажимаем на поле поиска")
+    public void clickSearchContainer() {
+        searchContainer.click();
+    }
 
     @Step("Проверяем, что логотип в тулбаре отображается")
     public void shouldHaveToolbarLogoDisplayed() {
