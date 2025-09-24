@@ -13,7 +13,7 @@ import org.wikipedia.android.at.config.AppConfig;
 import org.wikipedia.android.at.config.DeviceConfig;
 import org.wikipedia.android.at.config.RemoteConfig;
 import org.wikipedia.android.at.utils.RemoteUtils;
-import org.wikipedia.android.at.utils.report.RemoteSession;
+import org.wikipedia.android.at.utils.allure.report.RemoteSession;
 
 import javax.annotation.Nonnull;
 import java.net.MalformedURLException;

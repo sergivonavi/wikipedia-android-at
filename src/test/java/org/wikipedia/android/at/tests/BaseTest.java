@@ -14,8 +14,8 @@ import org.wikipedia.android.at.config.RemoteConfig;
 import org.wikipedia.android.at.drivers.BrowserstackDriver;
 import org.wikipedia.android.at.drivers.LocalDriver;
 import org.wikipedia.android.at.utils.RemoteUtils;
-import org.wikipedia.android.at.utils.report.AllureAttachments;
-import org.wikipedia.android.at.utils.report.RemoteSession;
+import org.wikipedia.android.at.utils.allure.report.AllureAttachments;
+import org.wikipedia.android.at.utils.allure.report.RemoteSession;
 
 import static com.codeborne.selenide.WebDriverRunner.hasWebDriverStarted;
 

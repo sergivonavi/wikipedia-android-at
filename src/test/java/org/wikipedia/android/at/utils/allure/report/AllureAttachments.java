@@ -1,4 +1,4 @@
-package org.wikipedia.android.at.utils.report;
+package org.wikipedia.android.at.utils.allure.report;
 
 import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Attachment;
