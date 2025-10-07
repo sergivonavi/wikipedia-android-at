@@ -28,6 +28,11 @@ public class BrowserstackDriver implements WebDriverProvider {
     private static final DeviceConfig deviceConfig = ConfigFactory.create(DeviceConfig.class);
     private static final AppConfig appConfig = ConfigFactory.create(AppConfig.class);
 
+    private static final String BUILD_NAME = String.format(
+            "build-%s",
+            LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss"))
+    );
+
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
@@ -42,7 +47,7 @@ public class BrowserstackDriver implements WebDriverProvider {
         bstackOptions.put("userName", userName);
         bstackOptions.put("accessKey", accessKey);
         bstackOptions.put("projectName", remoteConfig.projectName());
-        bstackOptions.put("buildName", getBuildName());
+        bstackOptions.put("buildName", BUILD_NAME);
         bstackOptions.put("sessionName", RemoteSession.get());
 
         UiAutomator2Options options = new UiAutomator2Options();
@@ -61,9 +66,5 @@ public class BrowserstackDriver implements WebDriverProvider {
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    private String getBuildName() {
-        return String.format("build-%s", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss")));
     }
 }
