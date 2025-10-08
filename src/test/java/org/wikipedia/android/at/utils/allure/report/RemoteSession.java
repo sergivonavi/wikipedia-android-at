@@ -1,4 +1,4 @@
-package org.wikipedia.android.at.utils.report;
+package org.wikipedia.android.at.utils.allure.report;
 
 public class RemoteSession {
     private static final ThreadLocal<String> sessionName = new ThreadLocal<>();
